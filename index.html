@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Simple Dividend Analyzer</title>
+	<meta charset="UTF-8">
+  	<meta name="description" content="A simple dividend analysis app, using real time stock market quotes">
+  	<meta name="keywords" content="Dividends, Analysis">
+  	<meta name="author" content="Stav Davis">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<!-- fonts: -->
+  	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+  	<!-- css reset: -->
+	<link rel="stylesheet" type="text/css" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+	<!-- styles: -->
+	<link rel="stylesheet" type="text/css" href="index.css"> 
+</head>
+
+<body>
+	<header role="banner" class="header-top">
+		<h1>How attractive are dividends right now?</h1>
+	</header>
+
+	<main role="main">
+		<section class="user-input-section">
+		    <form class="input-form">
+		    	<label for="stock-symbol-input">Enter a stock symbol</label><br>
+		     	<input type="text" name="stock-symbol-input" id="stock-symbol-input" placeholder="AAPL">
+			    <input type="submit" value="Submit">
+		    </form> 
+		</section>
+
+		<section class="results-section">
+			<div class="results-text"></div>
+			<div class="results-bar-chart"></div>
+				<div class="bar left-bar-SP500"></div>
+				<div class="bar right-bar-selected-stock"></div>
+			<div class="results-commentary"></div>			
+		</section>
+	</main>
+
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+
+</body>
+</html>
