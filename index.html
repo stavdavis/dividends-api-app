@@ -22,18 +22,23 @@
 
 	<main role="main">
 		<section class="user-input-section">
-		    <form class="input-form">
+		    <form action="#" class="input-form">
 		    	<label for="stock-symbol-input">Enter a stock symbol</label><br>
-		     	<input type="text" name="stock-symbol-input" id="stock-symbol-input" placeholder="AAPL">
-			    <input type="submit" value="Submit">
+		     	<input type="text" name="stock-symbol-input" class="stock-symbol-input" placeholder="AAPL">
+			    <button type="submit" class="submit-button">Go!</button>
 		    </form> 
 		</section>
 
 		<section class="results-section">
-			<div class="results-text"></div>
+			<div class="results-text">
+				<div class="dividend-results"></div>
+				<div class="non-dividend-results"></div>
+				<div class="SP500-results"></div>
+			</div>
 			<div class="results-bar-chart"></div>
-				<div class="bar left-bar-SP500"></div>
-				<div class="bar right-bar-selected-stock"></div>
+				<div class="bar left-SP500"></div>
+				<div class="bar middle-stock-dividend"></div>
+				<div class="bar right-stock-non-stock"></div>
 			<div class="results-commentary"></div>			
 		</section>
 	</main>
