@@ -3,6 +3,7 @@
 // First we get the dividend amount and date, (using source #1 and getJSON 
 //(NEED TO ADD ERROR MSG, IF NO DIVIDEND)
 function getLatestDividendData(stockSymbol) {
+  $('.wait-message').text('');  //Clear the wait message
   let dividendJsonUrl = `https://api.iextrading.com/1.0/stock/${stockSymbol}/dividends/3m`;
   let stockQuoteJsonUrl = `https://api.iextrading.com/1.0/stock/${stockSymbol}/chart/1y`;
   $.getJSON(dividendJsonUrl, data1 => {
@@ -27,6 +28,7 @@ function getLatestDividendData(stockSymbol) {
 }
 
 function getOneYearStockGains(stockSymbol) {
+  $('.wait-message').text('');  //Clear the wait message
   let stockQuoteJsonUrl = `https://api.iextrading.com/1.0/stock/${stockSymbol}/chart/1y`;
   $.getJSON(stockQuoteJsonUrl, data2 => {
     let latestStockQuote = data2[data2.length-1].close; //the last element in the 1y array of objects
@@ -57,15 +59,52 @@ function getOneYearSP500Gains() {
   });
 }
 
-$('.input-form').submit(event => {
-  event.preventDefault();
-  const userInput = $(event.currentTarget).find('.stock-symbol-input');
-  const userStockSymbol = userInput.val();
-  // clear out the input
-  getLatestDividendData(userStockSymbol);
-  getOneYearStockGains(userStockSymbol);
-  getOneYearSP500Gains(); //uses Vanguard's S&P500 fund - symbol: 'VOO'
-});
+function clearAllResultsFields() {
+  $('.top-bar-title').html(``);
+  $('.middle-bar-title').html(``);
+  $('.bottom-bar-title').text(``);
+
+  $('.bar').css({"border":"0","background-color":"white"});
+  // $('.middle-stock-non-dividend').css({"border":"0","background-color":"0"});
+  // $('.bottom-sp500').css({"border":"0","background-color":"0"});
+  
+  $('.top-stock-dividend').html(``);
+  $('.middle-stock-non-dividend').html(``);
+  $('.bottom-sp500').html(``);
+
+  $('.dividend-results-detail').html(``);
+  $('.dividend-results-main').html(``);
+  $('.non-dividend-results').html(``);
+  $('.sp500-results').html(``);
+  
+  $('.results-text').css("border", "0");
+}
+
+function listenForFreeTextSubmission() {
+  $('.input-form').submit(event => {
+    event.preventDefault();
+    clearAllResultsFields();
+    const userInput = $(event.currentTarget).find('.stock-symbol-input');
+    const userStockSymbol = userInput.val();
+    getLatestDividendData(userStockSymbol);
+    getOneYearStockGains(userStockSymbol);
+    getOneYearSP500Gains(); //uses Vanguard's S&P500 fund - symbol: 'VOO'
+  });
+}
+
+function listenForFixedButtonSubmission() {
+  $('.fixed-button').click(event => {
+    clearAllResultsFields();
+    event.preventDefault();
+    const userStockSymbol = $(event.currentTarget).text();
+    getLatestDividendData(userStockSymbol);
+    getOneYearStockGains(userStockSymbol);
+    getOneYearSP500Gains(); //uses Vanguard's S&P500 fund - symbol: 'VOO'
+  });
+}
+
+$(listenForFreeTextSubmission);
+$(listenForFixedButtonSubmission);
 
 
 ////////////////////////////////////////////////////////////

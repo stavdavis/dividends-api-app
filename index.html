@@ -29,12 +29,21 @@
 		     	<input type="text" name="stock-symbol-input" class="stock-symbol-input" placeholder="AAPL">
 			    <button type="submit" class="submit-button">Go!</button>
 		    </form> 
-		    Notes to Joel from Thinkful: 
-		    (1) Formatting is optimized for iPhone5. I'll add dynamic formatting for other screens later.
-		    (2) I plan to add a few pre-set buttons, for people who are not familiar with stock symbols. You can try AAPL (Apple), QCOM (Qualcom), FTR (Frontier Communications), or any other dividend bearing stock. I will add an error notification if the user inputs a non-dividend bearing stock (not all stocks bear dividends).
+
+		    <div class="fixed-buttons-section">
+		    	<div class="fixed-buttons-title">Or select one of the following examples:</div>
+		    	<button class="fixed-button">AAPL</button>
+		    	<button class="fixed-button">QCOM</button>
+		    	<button class="fixed-button">MCD</button>
+		    	<button class="fixed-button">VZ</button>
+		    	<button class="fixed-button">JNJ</button>
+		    	<button class="fixed-button">FTR</button>
+		    </div>		    
 		</section>
 
 		<section class="results-section">
+
+			<p class="wait-message"></p>
 
 			<div class="results-bar-chart"></div>
 				<div class="bar-title top-bar-title"></div>
