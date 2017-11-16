@@ -8,7 +8,7 @@
   	<meta name="author" content="Stav Davis">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<!-- fonts: -->
-  	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">  -->
+  	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
   	<!-- css reset: -->
 	<link rel="stylesheet" type="text/css" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
 	<!-- styles: -->
@@ -22,6 +22,8 @@
 
 	<main role="main">
 		<section class="user-input-section">
+			<p class="tool-summary-top">Dividends always look nice, on their own.<br>
+			But here's a tool for you to see a bigger picture.</p>
 		    <form action="#" class="input-form">
 		    	<label for="stock-symbol-input">Enter a stock symbol</label><br>
 		     	<input type="text" name="stock-symbol-input" class="stock-symbol-input" placeholder="AAPL">
@@ -30,16 +32,25 @@
 		</section>
 
 		<section class="results-section">
-			<div class="results-text">
-				<div class="dividend-results"></div>
-				<div class="non-dividend-results"></div>
-				<div class="SP500-results"></div>
-			</div>
+
 			<div class="results-bar-chart"></div>
-				<div class="bar left-SP500"></div>
-				<div class="bar middle-stock-dividend"></div>
-				<div class="bar right-stock-non-stock"></div>
-			<div class="results-commentary"></div>			
+				<div class="bar-title top-bar-title"></div>
+				<div class="bar top-stock-dividend"></div>
+
+				<div class="bar-title middle-bar-title"></div>
+				<div class="bar middle-stock-non-dividend"></div>
+
+				<div class="bar-title bottom-bar-title"></div>
+				<div class="bar bottom-sp500"></div>
+			<div class="results-commentary"></div>	
+
+			<ul class="results-text">
+				<li class="results-text-bullet dividend-results-detail"></li>
+				<li class="results-text-bullet dividend-results-main"></li>
+				<li class="results-text-bullet non-dividend-results"></li>
+				<li class="results-text-bullet sp500-results"></li>
+			</ul>
+		
 		</section>
 	</main>
 
