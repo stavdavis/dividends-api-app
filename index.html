@@ -26,7 +26,7 @@
 			But here's a tool for you to see a bigger picture.</p>
 		    <form action="#" class="input-form">
 		    	<label for="stock-symbol-input">Enter a stock symbol</label><br>
-		     	<input type="text" name="stock-symbol-input" class="stock-symbol-input" placeholder="AAPL">
+		     	<input type="text" name="stock-symbol-input" class="stock-symbol-input" required>
 			    <button type="submit" class="submit-button">Go!</button>
 		    </form> 
 
@@ -34,18 +34,20 @@
 		    	<div class="fixed-buttons-title">Or select one of the following examples:</div>
 		    	<button class="fixed-button">AAPL</button>
 		    	<button class="fixed-button">QCOM</button>
-		    	<button class="fixed-button">MCD</button>
 		    	<button class="fixed-button">VZ</button>
 		    	<button class="fixed-button">JNJ</button>
 		    	<button class="fixed-button">FTR</button>
+		    	<div class="button-descrip">Apple</div>
+		    	<div class="button-descrip">Qualcom</div>
+		    	<div class="button-descrip">Verizon</div>
+		    	<div class="button-descrip">J&J</div>
+		    	<div class="button-descrip">Frontier</div>
 		    </div>		    
 		</section>
 
 		<section class="results-section">
 
-			<p class="wait-message"></p>
-
-			<div class="results-bar-chart"></div>
+			<div class="results-bar-chart">
 				<div class="bar-title top-bar-title"></div>
 				<div class="bar top-stock-dividend"></div>
 
@@ -54,7 +56,7 @@
 
 				<div class="bar-title bottom-bar-title"></div>
 				<div class="bar bottom-sp500"></div>
-			<div class="results-commentary"></div>	
+			</div>
 
 			<div class="results-text">
 				<div class="results-text-bullet dividend-results-detail"></div>
