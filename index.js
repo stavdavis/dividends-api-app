@@ -163,6 +163,10 @@ function clearAllResultsFields() {
   $('.results-text').css("border", "0");
 }
 
+function clearManualInputField() {
+  $('.stock-symbol-input').val('');
+}
+
 //Finally, we need to setup two listeners:
 function listenForFreeTextSubmission() {
   $('.input-form').submit(event => {
@@ -176,6 +180,7 @@ function listenForFreeTextSubmission() {
 
 function listenForFixedButtonSubmission() {
   $('.fixed-button').click(event => {
+    clearManualInputField(); //we need this 
     clearAllResultsFields();
     event.preventDefault();
     const userStockSymbol = $(event.currentTarget).text();
