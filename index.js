@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 // First we get the dividend amount and date, (using source #1 and getJSON 
 //(NEED TO ADD ERROR MSG, IF NO DIVIDEND)
