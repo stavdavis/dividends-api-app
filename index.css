@@ -1,7 +1,16 @@
+/*These are mobile screen default setting.
+See below for @media call for larger screen formatting*/
+
 body * {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
+}
+
+body {
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 header {
@@ -9,7 +18,7 @@ header {
 }
 
 h1 {
-	font-size: 15px;
+	font-size: 5vw;
 	z-index: 0;
 	font-weight: bold;
 }
@@ -82,4 +91,34 @@ body {
 .sp500-results {
 	font-weight: bold;
 	color: purple;
+}
+
+@media only screen and (min-width: 500px) {
+	body * {
+		font-size: 18px;
+	}
+
+	h1 {
+		font-size: 28px;
+	}
+
+	.fixed-button {
+		font-size: 13px;
+		font-weight: bold;
+	}
+
+	.button-descrip {
+		font-size: 11px;
+	}
+
+	.bar-title {
+		font-size: 15px;
+	}
+
+	.bar {
+		height: 30px;
+	}
+
+	.results-text-bullet {
+		font-size: 15px;
 }
