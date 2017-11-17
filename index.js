@@ -8,6 +8,7 @@ function getLatestDividendData(stockSymbol) {
   $.getJSON(dividendJsonUrl, data1 => {
     let dividendAmount = data1[0].amount;  
     let dividendDate = data1[0].declaredDate; 
+    renderLogo(stockSymbol);
     $('.dividend-results-detail').html(`${stockSymbol.toUpperCase()}'s most recent quarterly dividend amount was: $${dividendAmount}<br>
       <br>
       ${stockSymbol.toUpperCase()} declared that dividend on: ${dividendDate}<br>`);
@@ -15,7 +16,7 @@ function getLatestDividendData(stockSymbol) {
     $.getJSON(stockQuoteJsonUrl, data2 => {
       let quoteOnDividendDate = data2.find(item => item.date == dividendDate).close;
       let annualizedDividend = (4 * 100 * dividendAmount / quoteOnDividendDate).toFixed(2);
-      $('.dividend-results-detail').append(`<br>${stockSymbol.toUpperCase()}'s stock quote on that date was:<br>$${quoteOnDividendDate}<br>`);
+      $('.dividend-results-detail').append(`<br>${stockSymbol.toUpperCase()}'s stock quote on that date was: $${quoteOnDividendDate}<br>`);
       $('.dividend-results-main').html(`<br>That represents an annualized return rate of: ${annualizedDividend}%<br>`);
       $('.top-bar-title').text(`${stockSymbol.toUpperCase()}'s annualized dividend rate: ${annualizedDividend}%`);
       $('.top-stock-dividend').width(Math.min(annualizedDividend, 100) + '%')
@@ -60,20 +61,22 @@ function getOneYearSP500Gains() {
 }
 
 function clearAllResultsFields() {
-  $('.top-bar-title').html(``);
-  $('.middle-bar-title').html(``);
-  $('.bottom-bar-title').text(``);
+  $('.logo').html('');
+
+  $('.top-bar-title').html('');
+  $('.middle-bar-title').html('');
+  $('.bottom-bar-title').text('');
 
   $('.bar').css({"border":"0","background-color":"white"});
   
-  $('.top-stock-dividend').html(``);
-  $('.middle-stock-non-dividend').html(``);
-  $('.bottom-sp500').html(``);
+  $('.top-stock-dividend').html('');
+  $('.middle-stock-non-dividend').html('');
+  $('.bottom-sp500').html('');
 
-  $('.dividend-results-detail').html(``);
-  $('.dividend-results-main').html(``);
-  $('.non-dividend-results').html(``);
-  $('.sp500-results').html(``);
+  $('.dividend-results-detail').html('');
+  $('.dividend-results-main').html('');
+  $('.non-dividend-results').html('');
+  $('.sp500-results').html('');
   
   $('.results-text').css("border", "0");
 }
@@ -97,28 +100,11 @@ function listenForFixedButtonSubmission() {
   });
 }
 
+function renderLogo(stockSymbol) {
+  let logoUrl = 'https://storage.googleapis.com/iex/api/logos/' + stockSymbol.toUpperCase() + '.png';
+  $(".logo").html('<img src="' + logoUrl + '" alt="Selected company\'s URL" class="logo-img">');
+}
+
 let errorFlag = 0;
 $(listenForFreeTextSubmission);
 $(listenForFixedButtonSubmission);
-
-
-////////////////////////////////////////////////////////////
-// OLD CODE, USING A DIFFERENT SOURCE (WAS TOO SLOW, SO SWITCHED TO IEXEXCHANGE.COM)
-
-// const alphaVantageSearchUrl = 'https://www.alphavantage.co/query?';
-
-// function getQuotesFromApi(stockSymbol, callback) {
-//   const settings = {
-//     url: alphaVantageSearchUrl,
-//     data: {
-//       function: 'TIME_SERIES_DAILY',
-//       symbol: stockSymbol,
-//       outputsize: 'full',
-//       apikey: 'UXCF18J1Y037DMY6'
-//     },
-//     dataType: 'json',
-//     type: 'GET',
-//     success: callback
-//   };
-//   $.ajax(settings);
-// }

@@ -3,12 +3,12 @@ See below for @media call for larger screen formatting*/
 
 body * {
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Timmana', sans-serif;
   font-size: 12px;
 }
 
 body {
-	max-width: 500px;
+	max-width: 550px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -18,7 +18,7 @@ header {
 }
 
 h1 {
-	font-size: 5vw;
+	font-size: 5.9vw;
 	z-index: 0;
 	font-weight: bold;
 }
@@ -33,21 +33,41 @@ body {
 	font-size: 15px;
 }
 
+.input-form * {
+	font-family: 'Roboto', sans-serif;
+}
+
 .fixed-buttons-section {
 	margin-top: 10px;
 }
 
+.fixed-buttons-title {
+	font-family: 'Roboto', sans-serif;
+	margin-bottom: 2px;
+}
+
 .fixed-button {
-	width: 19%;
+	width: 18.5%;
 	font-size: 10px;
+	font-weight: bold;
 	display: inline-block;
+	font-family: 'Roboto', sans-serif;
 }
 
 .button-descrip {
 	display: inline-block;
-	width: 19%;
+	width: 18.5%;
 	text-align: center;
-	font-size: 10px;
+	font-size: 9px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.logo {
+	text-align: center;
+}
+
+.logo-img {
+		width: 15%;
 }
 
 .bar {
@@ -93,18 +113,21 @@ body {
 	color: purple;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 550px) {
 	body * {
 		font-size: 18px;
 	}
 
 	h1 {
-		font-size: 28px;
+		font-size: 31px;
+	}
+
+	.tool-summary-top {
+		font-size: 24px;
 	}
 
 	.fixed-button {
 		font-size: 13px;
-		font-weight: bold;
 	}
 
 	.button-descrip {
