@@ -9,8 +9,7 @@ The app allows the user to input any stock symbol. If that stock is dividend bea
 
 #### UI and Screenshots
 This is the entry screen - it asks the user to enter a stock symbol manually, or choose from five pre-made examples.  
-<img src="/screenshots/entry-screen.png" width="50">
-![Entry Screen](/screenshots/entry-screen.png)  
+<img src="/screenshots/entry-screen.png" alt="Entry screen" width="250">  
 The app then uses three getJson calls to obtain the following data:
 * JSON #1 gets the dividend data: 
 	* Dividend amount
@@ -28,7 +27,7 @@ The app then generates a clean bar chart represntation of that comparative data:
 * Annual return of the market baseline
 The bar charts are generated with div elements, with widths that are dynamically controlled by JS (the only formatting not fully controlled by css).
 Below is an example screenshot, using the APPL (Apple, Inc.) case study:  
-![Apple results screen](/screenshots/appl-results.png)  
+<img src="/screenshots/appl-results.png" alt="Apple results screen" width="250">  
 The point of this and other examples is that the dividend is relatively small and proves to be a fairly bad driver for a decision to buy a stock. It might distract from its overall performance. In some cases (such as Apple's), it does align with overall success, but the correlation is far from perfect.
 
 #### Error Handling
@@ -36,8 +35,9 @@ There are two possible errors (other than loss of internet connection):
 * User inputs an invalid stock symbol (example: 'ASDDEASAD')
 * User inputs a valid symbol, but that stock does not bear a dividend (example: 'GOOG' for Google)
 Both errors are caught and handled with an alert that doesn not crash the app. Below are two screenshots:  
-![Invalid symbol error](/screenshots/invalid-error.png)  
-![Valid but no dividend error](/screenshots/no-dividend-error.png)  
+<img src="/screenshots/invalid-error.png" alt="Invalid symbol error" width="250">  
+<img src="/screenshots/no-dividend-error.png" alt="Valid but no dividend error" width="250">  
+
 
 Formatting
 The design was deliberately kept minimalist, as this is an analysis tool rather than a consumer facing app. 
