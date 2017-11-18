@@ -10,6 +10,7 @@
   	<!-- fonts: -->
   	<link href="https://fonts.googleapis.com/css?family=Timmana" rel="stylesheet">
   	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+  	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   	<!-- css reset: -->
 	<link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
 	<!-- styles: -->
@@ -26,7 +27,7 @@
 			<p class="tool-summary-top">Dividends always look nice, on their own.<br>
 			But here's a tool for you to see a bigger picture.</p>
 		    <form action="#" class="input-form">
-		    	<label for="stock-symbol-input">Enter a stock symbol</label><br>
+		    	<label for="stock-symbol-input" class="input-instruct">Enter a stock symbol</label><br>
 		     	<input type="text" name="stock-symbol-input" class="stock-symbol-input" required>
 			    <button type="submit" class="submit-button">Go!</button>
 		    </form> 
@@ -62,6 +63,7 @@
 			</div>
 
 			<div class="results-text">
+				<div class="results-text-title"></div>
 				<div class="results-text-bullet dividend-results-detail"></div>
 				<div class="results-text-bullet dividend-results-main"></div>
 				<div class="results-text-bullet non-dividend-results"></div>
