@@ -9,8 +9,8 @@ The app allows the user to input any stock symbol. If that stock is dividend bea
 
 #### UI and Screenshots
 This is the entry screen - it asks the user to enter a stock symbol manually, or choose from five pre-made examples.
-![Entry Screen](/screenshots/entry-screen.png)
-Format: ![Alt Text](url)
+![Entry Screen](/screenshots/entry-screen.png =50x)
+<img src="/screenshots/entry-screen.png" alt="Entry screen" style="width: 50px;"/>
 The app then uses three getJson calls to obtain the following data:
 * JSON #1 gets the dividend data: 
 	* Dividend amount
@@ -29,7 +29,6 @@ The app then generates a clean bar chart represntation of that comparative data:
 The bar charts are generated with div elements, with widths that are dynamically controlled by JS (the only formatting not fully controlled by css).
 Below is an example screenshot, using the APPL (Apple, Inc.) case study:
 ![Apple results screen](/screenshots/appl-results.png)
-Format: ![Alt Text](url)
 The point of this and other examples is that the dividend is relatively small and proves to be a fairly bad driver for a decision to buy a stock. It might distract from its overall performance. In some cases (such as Apple's), it does align with overall success, but the correlation is far from perfect.
 
 #### Error Handling
@@ -38,9 +37,7 @@ There are two possible errors (other than loss of internet connection):
 * User inputs a valid symbol, but that stock does not bear a dividend (example: 'GOOG' for Google)
 Both errors are caught and handled with an alert that doesn not crash the app. Below are two screenshots:
 ![Invalid symbol error](/screenshots/invalid-error.png)
-Format: ![Alt Text](url)
 ![Valid but no dividend error](/screenshots/no-dividend-error.png)
-Format: ![Alt Text](url)
 
 Formatting
 The design was deliberately kept minimalist, as this is an analysis tool rather than a consumer facing app. 
