@@ -9,7 +9,6 @@ The app allows the user to input any stock symbol. If that stock is dividend bea
 
 #### UI and Screenshots
 This is the entry screen - it asks the user to enter a stock symbol manually, or choose from five pre-made examples.
-![Entry Screen](/screenshots/entry-screen.png =50x)
 <img src="/screenshots/entry-screen.png" alt="Entry screen" style="width: 10px;"/>
 The app then uses three getJson calls to obtain the following data:
 * JSON #1 gets the dividend data: 
