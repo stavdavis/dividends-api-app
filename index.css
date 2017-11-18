@@ -129,8 +129,8 @@ body {
 
 .results-text-title {
 	font-size: 3.4vw;
-	text-decoration: underline;
-	/*font-weight: bold;*/
+	/*text-decoration: underline;*/
+	font-weight: bold;
 }
 
 .results-text-bullet {

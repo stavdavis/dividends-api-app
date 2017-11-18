@@ -72,7 +72,7 @@ function jsonErrorAlert(error) {
 }
 
 function renderChartAreaBrdrs() {
-  // $('.results-text').css("border", "0px solid black");
+  $('.results-text').css("border", "1px solid black");
   $('.results-bar-chart').css("border", "1px solid black");
 }
 
