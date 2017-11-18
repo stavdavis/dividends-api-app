@@ -8,8 +8,9 @@ The Simple Dividend Analyzer is an easy way to avoid over-estimating the attract
 The app allows the user to input any stock symbol. If that stock is dividend bearing, the app will compute its annualized dividend rate and compare it to the non-dividend performance of that stock over the past year, as well as the market baseline performance over the past year (S&P 500).
 
 #### UI and Screenshots
-This is the entry screen - it asks the user to enter a stock symbol manually, or choose from five pre-made examples.
-<img src="/screenshots/entry-screen.png" alt="Entry screen" style="width: 10px;"/>
+This is the entry screen - it asks the user to enter a stock symbol manually, or choose from five pre-made examples.  
+<img src="/screenshots/entry-screen.png" width="50">
+![Entry Screen](/screenshots/entry-screen.png)  
 The app then uses three getJson calls to obtain the following data:
 * JSON #1 gets the dividend data: 
 	* Dividend amount
@@ -26,17 +27,17 @@ The app then generates a clean bar chart represntation of that comparative data:
 * Annual non-dividend return of the stock ("what else did this stock do")
 * Annual return of the market baseline
 The bar charts are generated with div elements, with widths that are dynamically controlled by JS (the only formatting not fully controlled by css).
-Below is an example screenshot, using the APPL (Apple, Inc.) case study:
-![Apple results screen](/screenshots/appl-results.png)
+Below is an example screenshot, using the APPL (Apple, Inc.) case study:  
+![Apple results screen](/screenshots/appl-results.png)  
 The point of this and other examples is that the dividend is relatively small and proves to be a fairly bad driver for a decision to buy a stock. It might distract from its overall performance. In some cases (such as Apple's), it does align with overall success, but the correlation is far from perfect.
 
 #### Error Handling
 There are two possible errors (other than loss of internet connection):
 * User inputs an invalid stock symbol (example: 'ASDDEASAD')
 * User inputs a valid symbol, but that stock does not bear a dividend (example: 'GOOG' for Google)
-Both errors are caught and handled with an alert that doesn not crash the app. Below are two screenshots:
-![Invalid symbol error](/screenshots/invalid-error.png)
-![Valid but no dividend error](/screenshots/no-dividend-error.png)
+Both errors are caught and handled with an alert that doesn not crash the app. Below are two screenshots:  
+![Invalid symbol error](/screenshots/invalid-error.png)  
+![Valid but no dividend error](/screenshots/no-dividend-error.png)  
 
 Formatting
 The design was deliberately kept minimalist, as this is an analysis tool rather than a consumer facing app. 
