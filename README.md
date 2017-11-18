@@ -35,17 +35,17 @@ There are two possible errors (other than loss of internet connection):
 * User inputs an invalid stock symbol (example: 'ASDDEASAD')
 * User inputs a valid symbol, but that stock does not bear a dividend (example: 'GOOG' for Google)
 Both errors are caught and handled with an alert that doesn not crash the app. Below are two screenshots:  
-<img src="/screenshots/invalid-error.png" alt="Invalid symbol error" width="300">
+<img src="/screenshots/invalid-error.png" alt="Invalid symbol error" width="350">
 <img src="/screenshots/no-dividend-error.png" alt="Valid but no dividend error" width="350">  
 
 
-Formatting
+#### Formatting
 The design was deliberately kept minimalist, as this is an analysis tool rather than a consumer facing app. 
 Dynamic layout has been implemented to adjust the appearance to different screen sizes (most elements grow proportionately up to a screen width of 550px, at which point all dimensions freeze and align to the center of the page).
 
-#### Technology used
+#### Technology Used
 This simple app uses HTML, CSS, JavaScript and jQuery.
 
-#### Browser compatibility
+#### Browser Compatibility
 This app has been tested and works on all major browsers (Chrome, Firefox, Edge, Safari) except IE11 (due to handling of template literals and backticks specifically). Babel will be used in future iterations to handle that issue.
 
